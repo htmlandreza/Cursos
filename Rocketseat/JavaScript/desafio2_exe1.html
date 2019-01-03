@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript - Desafio 2</title>
+    </head>
+    <body>
+        <button id="geraQuadrado">Gera Quadrado</button>
+        
+        <div id="espaco">
+           
+        </div>
+
+        <script>
+            //javascript
+
+            //Exercício 1
+
+            // //maneira que eu fiz
+            // //buscar o botão e espaço
+            // var btnquadradoElement = document.getElementById('geraQuadrado');
+            // var geraquadradoElement = document.getElementById('espaco');
+
+            // //define ação ao clicar no botão
+            // btnquadradoElement.onclick = function(){
+            //     geraquadradoElement.style.width = 100;
+            //     geraquadradoElement.style.height = 100;
+            //     geraquadradoElement.style.backgroundColor = '#f00';
+            // }
+
+            //maneira correta
+            var btnElement = document.getElementById('geraQuadrado');
+            var espacoElement = document.getElementById('espaco');
+            
+            btnElement.onclick = function () {
+                var espaco = document.createElement('div');
+
+                espaco.style.width = '100px';
+                espaco.style.height = '100px';
+                espaco.style.backgroundColor = '#F00';
+                espacoElement.appendChild(espaco);
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript - Desafio 2</title>
+    </head>
+    <body>
+        <button id="geraQuadrado">Gera Quadrado</button>
+        
+        <div id="espaco">
+           
+        </div>
+
+        <script>
+            //javascript
+
+            //Exercício 1 (usado como base)
+            var btnElement = document.getElementById('geraQuadrado');
+            var espacoElement = document.getElementById('espaco');
+            
+            btnElement.onclick = function () {
+                var espaco = document.createElement('div');
+
+                espaco.style.width = '100px';
+                espaco.style.height = '100px';
+                espaco.style.backgroundColor = '#F00';
+
+                espaco.onmouseover = function(){
+                    espaco.style.backgroundColor = newColor;
+                }
+                espacoElement.appendChild(espaco);
+            };
+
+            //Exercício 2
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            
+            var newColor = getRandomColor(); // #E943F0
+
+            
+        </script>
+    </body>
+</html>

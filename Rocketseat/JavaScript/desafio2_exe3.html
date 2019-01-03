@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript - Desafio 2</title>
+    </head>
+    <body>
+        <ul></ul>
+           
+        </div>
+
+        <script>
+            //javascript
+
+            //Exercício 3 - como base
+
+            //vetor
+            var nomes = ['Andreza', 'Marvin', 'Cezar'];
+
+            listElements = document.querySelector('ul');
+
+            //variavel dos atributos
+            for(nome of nomes){
+                var liElement = document.createElement('li');
+                var textElement = document.createTextNode(nome);
+
+                liElement.appendChild(textElement);
+                listElements.appendChild(liElement);
+            }
+            
+        </script>
+    </body>
+</html>
