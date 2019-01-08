@@ -1,0 +1,4 @@
+//Projetos
+{
+    "presets": ["@babel/preset-env"]
+}

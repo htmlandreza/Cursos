@@ -1,0 +1,17 @@
+{
+  "name": "JavaScript_ES6",
+  "version": "1.0.0",
+  "description": "Curso JavaScript ES6+",
+  "main": "index.js",
+  "repository": "https://github.com/htmlandreza/Cursos.git",
+  "author": "Andreza Moreira <htmlandreza@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3"
+  },
+    "scripts":{
+      "dev": "babel ./main.js -o ./bundle.js -w"
+    }
+}
