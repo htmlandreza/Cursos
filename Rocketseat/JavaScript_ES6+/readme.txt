@@ -1,4 +1,4 @@
-~~ Curso de JavaScript ES6+
+~~ Curso de JavaScript ES6+ da Rocketseat
 
 Estudo desenvolvido por: Andreza Moreira
 Iniciado em: 07/01/2019
