@@ -21,6 +21,22 @@ class App{
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
+    //loading...
+    setLoading(loading = true){
+        if (loading === true){
+            //criando o elemento
+            let loadingEl = document.createElement('span');
+            loadingEl.appendChild(document.createTextNode('Carregando'));
+            loadingEl.setAttribute('id','loading');
+
+            //adicionando elemento no form
+            this.formEl.appendChild(loadingEl);
+        }
+        else{
+            document.getElementById('loading').remove();
+        }
+    }
+
     //tem q adicionar um novo repositório dentro do array
     async addRepository(event){
         event.preventDefault(); //não deixa o form recarregar a página
@@ -31,28 +47,38 @@ class App{
         //verificar se está preenchido
         if (repoInput.length === 0)
             return; //para de executar
+        
+        this.setLoading();
 
-        //se não entrar no return
-        const response = await api.get(`/repos/${repoInput}`);
+        try{        
+            //se não entrar no return
+            const response = await api.get(`/repos/${repoInput}`);
 
-        // console.log(response.data);
+            // console.log(response.data);
 
-        //desestruturação
-        const{name, description, html_url, owner: {avatar_url}} = response.data;
+            //desestruturação
+            const{name, description, html_url, owner: {avatar_url}} = response.data;
 
-        //buscando os dados, no data
-        this.repositories.push({
-            name,
-            description,
-            avatar_url,
-            html_url,
-        });
+            //buscando os dados, no data
+            this.repositories.push({
+                name,
+                description,
+                avatar_url,
+                html_url,
+            });
 
-        //apagar o conteúdo do input depois que ele salva
-        this.inputEl.value = '';
+            //apagar o conteúdo do input depois que ele salva
+            this.inputEl.value = '';
 
-        // console.log(this.repositories);
-        this.render();    
+            // console.log(this.repositories);
+            this.render();  
+        }
+
+        catch(err){
+            alert('O repositório não existe!');
+        }
+
+        this.setLoading(false);
     }
 
      //renderizar
