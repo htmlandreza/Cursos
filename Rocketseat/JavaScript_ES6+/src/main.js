@@ -113,8 +113,6 @@ class App{
 
 }
 
-
-
 //instanciar a classe pra ela rodar
 // const MeuApp = new App();
 new App();
